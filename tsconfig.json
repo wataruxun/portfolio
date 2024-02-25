@@ -1,6 +1,37 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true
-  }
+    "extends": "astro/tsconfigs/strict",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": [
+      "unplugin-vue-macros/macros-global",
+      "@intlify/unplugin-vue-i18n/messages",
+      "vite/client",
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-models",
+      "@vue-macros/volar/define-props",
+      "@vue-macros/volar/define-props-refs",
+      "@vue-macros/volar/short-vmodel",
+      "@vue-macros/volar/export-props"
+    ]
+  },
+  "include": ["src/**/*.astro","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

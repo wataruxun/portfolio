@@ -1,0 +1,59 @@
+{
+  "plugins": ["stylelint-prettier", "stylelint-scss"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-prettier/recommended",
+    "stylelint-config-recess-order",
+    "stylelint-config-html/html"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    },
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "rules": {
+    "color-function-notation": "legacy",
+    "at-rule-no-unknown": null,
+    "no-empty-source": null,
+    "prettier/prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "tabWidth": 2,
+        "endOfLine": "auto"
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements", "default-namespace"]
+      }
+    ],
+    "no-descending-specificity": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": "inside-block"
+      }
+    ],
+    "import-notation": null
+  }
+}

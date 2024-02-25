@@ -1,10 +1,12 @@
 {
-    "prettier.documentSelectors": ["**/*.astro"],
     "[astro]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.words": [
       "astro",
-      "astrojs"
-    ]
+      "astrojs",
+      "tailwindcss"
+    ],
+    "prettier.configPath": "prettierrc.mjs",
+    "editor.formatOnSave": true,
   }
